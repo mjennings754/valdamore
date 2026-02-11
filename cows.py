@@ -1,4 +1,5 @@
 from player import Player
+import random
 class Cow:
     def __init__(self, health, attack_damage, combat_level):
         self.health = health
@@ -22,5 +23,9 @@ class Cow:
             print("The cow has been killed!")
             self.health = 8
             print("A new cow appears")
+
+            loot_table = ["Raw beef", "Cowhide"]
+            drop = random.choice(loot_table)
+            player.add_item(drop)
 
 cow1 = Cow(8, 2, 2)

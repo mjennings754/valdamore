@@ -15,7 +15,8 @@ while True:
     print("1) Adventure around")
     print("2) Go to cow area")
     print("3) Check stats")
-    print("4) Quit")
+    print("4) Check your inventory")
+    print("5) Quit")
 
     userinput = int(input("> "))
 
@@ -34,7 +35,9 @@ while True:
         print(f"Attack XP: {player.experience['Attack']}")
 
     elif userinput == 4:
-        print("Goodbye!")
+        player.show_inventory()
+    
+    elif userinput == 5:
         break
 
     else:
