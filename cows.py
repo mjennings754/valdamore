@@ -9,7 +9,18 @@ class Cow:
         return "There's a cow nearby."
     
     def attack(self, player):
-        print("You attack the cow!")
-        player.add_experience("Attack", 100)
+        if self.health <= 0:
+            print("The cow is already dead")
+            return
+        
+        self.health -= 3
+        print(f"Cow has {self.health} health remaining")
+
+        player.add_experience("Attack", 50)
+
+        if self.health <= 0:
+            print("The cow has been killed!")
+            self.health = 8
+            print("A new cow appears")
 
 cow1 = Cow(8, 2, 2)
