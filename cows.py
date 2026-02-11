@@ -1,3 +1,4 @@
+from player import Player
 class Cow:
     def __init__(self, health, attack_damage, combat_level):
         self.health = health
@@ -6,5 +7,9 @@ class Cow:
 
     def __str__(self):
         return "There's a cow nearby."
+    
+    def attack(self, player):
+        print("You attack the cow!")
+        player.add_experience("Attack", 100)
 
 cow1 = Cow(8, 2, 2)
